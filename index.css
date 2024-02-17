@@ -1,0 +1,132 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    overflow: hidden;
+ 
+  
+
+ }
+
+.container{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: -1;
+}
+
+.first-circle{
+    
+    /* background-color: rgb(3, 129, 129);
+    position: absolute;
+    width: 50%;
+    height: 600px;
+    border-radius: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) scale(3); */
+    width: 80%;
+    height: 800px;
+    background-color: rgb(38, 243, 243);
+    display: flexbox;
+    transform-origin: bottom;
+    border-radius: 100%;
+    transform: translateX(-90%) scale(2.8);
+    
+}
+
+.todo{
+    width: 400px;
+    height: 600px;
+    background-color: black;
+    z-index:10;
+    /* margin: 430px; */
+    /* margin-top: -740px; */
+    /* position: absolute; */
+    border-radius: 30px;
+    box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.2);
+    margin: 100px auto;
+}   
+.todo h3{
+    color: white;
+    margin: 5px; 
+    padding: 5px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.todo p{
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    
+
+}
+
+.todo-header{
+    width: 500px;
+    height: 100px;
+    background-color:  rgb(38, 243, 243);
+    box-shadow: black;
+
+}
+.todo-header img{
+background-color: transparent;
+    width: 60px;
+    height: 50px;
+   margin: 20px;
+   float:right;}
+#arrow{
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+   margin: 20px;
+   float:left
+
+}
+.todo-header h2{
+    font-size: 20px;
+    padding: 30px;
+    margin: 20px;
+    padding-left: 160px;
+ 
+
+}
+.list-container{
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    background-color: grey;
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+}
+.list-container label {
+    flex: 1;
+}
+
+.list-container h3{
+ align-self: center;
+}
+
+
+.small-circle{
+   width: 300px;
+   height: 300px;
+   background-color: black; 
+   display: flexbox;
+   transform-origin: bottom; 
+   border-radius:50%;
+   top: 0;
+   margin-left: 20px;
+   padding: 40px;
+   transform: translateX(50%) scale(3);
+   
+}
+.add img{
+     background-color: aqua;
+     width: 50px;
+     height: 50px;
+     border-radius: 100%;
+    float:right;
+}
