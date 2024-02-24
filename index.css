@@ -97,17 +97,38 @@ background-color: transparent;
     margin: 10px;
     background-color: grey;
     padding: 5px;
-    border-radius: 20px;
+    border-radius: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
+    height: 60px;
+    cursor: pointer;
 }
+#checkbox[type=checkbox]:checked + label{
+    text-decoration: line-through; 
+  }
+.strike {
+    text-decoration: line-through;
+  }
+  
+
+#label{
+    cursor: pointer;
+}
+
+span{
+    float: right;
+ 
+}
+
 .list-container label {
     flex: 1;
 }
 
 .list-container h3{
- align-self: center;
+ align-self: flex-end;
+ justify-content: flex-end;
 }
+
 
 
 .small-circle{
@@ -129,4 +150,5 @@ background-color: transparent;
      height: 50px;
      border-radius: 100%;
     float:right;
+    
 }

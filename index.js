@@ -36,14 +36,41 @@ function updateUI() {
     const task = taskList[i];
 
     taskUis += `<div class="list-container">
-                    <input type="checkbox" id="veg" name="veg" value="veg" ${task.status ? "checked" : ""}>
-                    <label  ${
+                    <input type="checkbox" id="checkbox" name="veg" value="veg" ${task.status ? "checked" : ""}>
+                    <label id="mylabel" ${
                       task.status
                         ? `style="text-decoration: line-through; color: white;"`
                         : ""
-                    }>${task.name}</label>
-                    <span>${formatTime(task.time)}</span>
+                    }>${task.name}<span>${formatTime(task.time)}</span> </label>
+                    
                 </div>`;
   }
+
   taskListElement.innerHTML = taskUis;
+const list=document.querySelector('#tast-list');
+list.addEventListener('click', e => {
+  if (e.target.classList.contains('list-container')) {
+    e.target.classList.toggle('strike');
+  } 
+});
+
+// document.addEventListener("click", function() {
+//   var container = document.getElementById("tast-list");
+//   var checkbox = document.getElementById("checkbox");
+//   var label = document.getElementById("mylabel");
+
+//   container.addEventListener("click", function() {
+
+//     if (checkbox.checked =true){
+//       label.style.textDecoration=" line-through";
+//     }
+//     else{
+//       label.style.textDecoration=none
+
+//     }
+    
+    
+//   });
+// });
 }
+  
