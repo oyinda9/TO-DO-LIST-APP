@@ -65,6 +65,7 @@ function onDeleteClick(){
   if (question){
     taskList.pop(onItemClick.position)
     updateUI()
+    alert("hurray task deleted")
   }
   else{
     alert("operation was cancelled")
