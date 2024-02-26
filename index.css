@@ -21,6 +21,8 @@ button{
     height: 30px;
     background-color: aqua;
     float:right;
+    cursor:pointer;
+    
 
 }
 .first-circle{
