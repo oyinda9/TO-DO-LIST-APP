@@ -35,42 +35,38 @@ function updateUI() {
   for (let i = 0; i < taskList.length; i++) {
     const task = taskList[i];
 
-    taskUis += `<div class="list-container">
+    taskUis += `<div class="list-container" onclick="onItemClick(${i})">
                     <input type="checkbox" id="checkbox" name="veg" value="veg" ${task.status ? "checked" : ""}>
                     <label id="mylabel" ${
                       task.status
                         ? `style="text-decoration: line-through; color: white;"`
                         : ""
-                    }>${task.name}<span>${formatTime(task.time)}</span> </label>
+                    }>${task.name}  </label>
+                    <button onclick="onDeleteClick(${i})">delete</button>
+                    <span>${formatTime(task.time)}</span>
+
+                    
+                    
                     
                 </div>`;
   }
 
   taskListElement.innerHTML = taskUis;
-const list=document.querySelector('#tast-list');
-list.addEventListener('click', e => {
-  if (e.target.classList.contains('list-container')) {
-    e.target.classList.toggle('strike');
-  } 
-});
 
-// document.addEventListener("click", function() {
-//   var container = document.getElementById("tast-list");
-//   var checkbox = document.getElementById("checkbox");
-//   var label = document.getElementById("mylabel");
-
-//   container.addEventListener("click", function() {
-
-//     if (checkbox.checked =true){
-//       label.style.textDecoration=" line-through";
-//     }
-//     else{
-//       label.style.textDecoration=none
-
-//     }
-    
-    
-//   });
-// });
 }
   
+function onItemClick(position){
+  taskList[position].status=!taskList[position].status
+  updateUI()
+
+}
+function onDeleteClick(){
+  const question=confirm("do you want to delete this task?");
+  if (question){
+    taskList.pop(onItemClick.position)
+    updateUI()
+  }
+  else{
+    alert("operation was cancelled")
+  }
+}
