@@ -2,6 +2,9 @@ const taskList = [];
 
 const addButtonElement = document.getElementById("add-button");
 const taskListElement = document.getElementById("tast-list");
+const taskDoneElement=document.getElementById("taskDone");
+const taskUndoneElement=document.getElementById("taskUndone");
+const todayDateElement=document.getElementById("mydate");
 
 addButtonElement.addEventListener("click", function () {
   const taskName = prompt("Enter your task: ");
@@ -52,18 +55,27 @@ function updateUI() {
   }
 
   taskListElement.innerHTML = taskUis;
+  const donetasks=taskList.filter(function(task){
+    return task.status===true
+  });
+  const undonetasks= taskList.length- donetasks.length;
+  taskDoneElement.innerHTML=donetasks.length;
+  taskUndoneElement.innerHTML=undonetasks;
+  todayDateElement.innerHTML= new Date().toLocaleDateString();
+  
+
 
 }
   
-function onItemClick(position){
-  taskList[position].status=!taskList[position].status
+function onItemClick(index){
+  taskList[index].status=!taskList[index].status
   updateUI()
 
 }
-function onDeleteClick(){
+function onDeleteClick(index){
   const question=confirm("do you want to delete this task?");
   if (question){
-    taskList.pop(onItemClick.position)
+    taskList.splice(index,1)
     updateUI()
     alert("hurray task deleted")
   }
@@ -71,3 +83,5 @@ function onDeleteClick(){
     alert("operation was cancelled")
   }
 }
+
+updateUI()
